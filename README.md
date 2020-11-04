@@ -5,7 +5,7 @@ En este proyecto vamos a analizar los factores relacionados con los precios de l
 Antes de ajustar los modelos revisamos los datos por separado en el trainset y testset, reemplazando valores faltantes por una categoría adecuada de acuerdo con la descripción de los datos (data_description.txt) si es posible. En algunos predictores reemplazamos NA con None para indicar la falta de esa característica en la propiedad (e.g. Alley), mientras que en otros reemplazamos NA por 0 para indicar falta de área, baños, etc (por ejemplo GarageArea). 
 
 ##  Correlación y visualización
-Ya que no hay datos faltantes, exploramos la relación entre las variables. Aquí transformamos la variable respuesta para corregir su escala y el sesgo, calculamos la matriz de correlación y visualizamos gráficamente los predictores más correlacionados con logSalePrice, además de aislarlos en otro data frame para más adelante comparar modelos saturados vs modelos con sólo este subconjunto de predictores. 
+Ya que no hay datos faltantes, exploramos la relación entre las variables. Aquí transformamos la variable respuesta para corregir su escala y el sesgo, calculamos la matriz de correlación y visualizamos gráficamente los predictores más correlacionados con logSalePrice.
 
 ## Codificación de variables ordinales y  categóricas
 Separamos las variables categóricas en dos grupos: las ordinales y las puramente categóricas. Las ordinales son aquellas que consideramos que pueden tener un orden e.g. para predictores que tienen que ver con calidad y tienen valores 'Ex(excellent)', 'Gd(good)' etc. Estas las codificamos mediante labelEncoding y para las sobrantes utilizamos one-hot encoding. 
