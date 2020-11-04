@@ -2,7 +2,7 @@
 En este proyecto vamos a analizar los factores relacionados con los precios de las casas para predecir este último utilizando regresión lineal, ridge, lasso y elastic net. Utilizando cross validation encontraremos los hyperparámetros óptimos para los modelos y compararemos entre ellos utilizando como medidas de bondad de ajuste R^2 y RMSE.
 
 ## Datos
-Antes de ajustar los modelos revisamos los datos por separado en el trainset y testset, reemplazando valores faltantes por una categoría adecuada de acuerdo con la descripción de los datos (data_description.txt) si es posible. En algunos predictores reemplazamos NA con None para indicar la falta de esa característica en la propiedad (e.g. Alley), mientras que en otros reemplazamos NA por 0 para indicar falta de área, baños, etc (por ejemplo GarageArea). Para todos los demás llenamos los faltantes con la categoría más común.
+Antes de ajustar los modelos revisamos los datos por separado en el trainset y testset, reemplazando valores faltantes por una categoría adecuada de acuerdo con la descripción de los datos (data_description.txt) si es posible. En algunos predictores reemplazamos NA con None para indicar la falta de esa característica en la propiedad (e.g. Alley), mientras que en otros reemplazamos NA por 0 para indicar falta de área, baños, etc (por ejemplo GarageArea). <!-- Para todos los demás llenamos los faltantes con la categoría más común. 
 
 ##  Correlación y visualización
 Ya que no hay datos faltantes, exploramos la relación entre las variables. Aquí transformamos la variable respuesta para corregir su escala y el sesgo, calculamos la matriz de correlación y visualizamos gráficamente los predictores más correlacionados con logSalePrice, además de aislarlos en otro data frame para más adelante comparar modelos saturados vs modelos con sólo este subconjunto de predictores. 
@@ -25,4 +25,4 @@ Separamos las variables categóricas en dos grupos: las ordinales y las purament
   <img src = "images/enet.png">
   <p> con alpha = 2.328 y lambda = 0.5.
 </ul>
-Ajustamos todos de nuevo sólo con los predictores más correlacionados empeoró el rendimiento, así que elegimos la regresión Ridge para hacer las predicciones en el otro conjunto de datos (test).
+Elegimos como mejor modelo con respecto a R^2 y el error cuadrático medio a la regresión Ridge.
